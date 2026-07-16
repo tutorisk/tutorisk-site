@@ -1,0 +1,12 @@
+# Redirections Netlify
+/catalogue        /catalogue.html    301
+/contact          /contact.html      301
+/a-propos         /a-propos.html     301
+/nos-activites    /nos-activites.html 301
+/sante-securite   /sante-securite.html 301
+/aleas-naturels   /aleas-naturels.html 301
+/risques          /risques-technologiques.html 301
+/collectivites    /collectivites.html 301
+/formation        /formation-presentielle.html 301
+/conseil          /conseil-audit.html 301
+/* /index.html 200
