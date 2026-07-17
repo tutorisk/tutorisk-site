@@ -1,0 +1,11 @@
+{
+  "name": "TutoRisk — Formation & conseil en gestion des risques",
+  "short_name": "TutoRisk",
+  "icons": [
+    { "src": "/assets/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#CC1515",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
