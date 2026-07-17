@@ -117,8 +117,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Bandeau supérieur ───────────────────────────────────── */
 .topbar {
-  background: var(--dark);
-  color: rgba(255,255,255,.55);
+  background: var(--bg);
+  color: var(--text-light);
+  border-bottom: 1px solid var(--border);
   font-size: .6875rem;
   padding: .3125rem 2rem;
   display: flex;
@@ -127,8 +128,8 @@ a { color: inherit; text-decoration: none; }
   gap: 1rem;
 }
 .topbar-links { display: flex; gap: 1.5rem; }
-.topbar a { color: rgba(255,255,255,.55); transition: color .15s; }
-.topbar a:hover { color: #fff; }
+.topbar a { color: var(--text-light); transition: color .15s; }
+.topbar a:hover { color: var(--red); }
 
 /* ── Navigation ──────────────────────────────────────────── */
 .navbar {
@@ -154,15 +155,14 @@ a { color: inherit; text-decoration: none; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: .5rem;
   text-decoration: none;
   flex-shrink: 0;
 }
-.nav-logo span {
-  font-size: 1.3125rem;
-  font-weight: 900;
-  color: var(--red);
-  letter-spacing: -.03em;
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -289,16 +289,17 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Hero ────────────────────────────────────────────────── */
 .hero {
-  background: var(--dark);
-  color: #fff;
+  background: var(--white);
+  color: var(--text);
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-pattern {
   position: absolute;
   inset: 0;
-  opacity: .06;
+  opacity: .04;
   background-image:
     repeating-linear-gradient(60deg, #CC1515 0, #CC1515 1px, transparent 0, transparent 50%),
     repeating-linear-gradient(-60deg, #CC1515 0, #CC1515 1px, transparent 0, transparent 50%);
@@ -326,9 +327,9 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   gap: .375rem;
-  background: rgba(204,21,21,.2);
-  border: 1px solid rgba(204,21,21,.45);
-  color: #FF9999;
+  background: var(--red-light);
+  border: 1px solid rgba(204,21,21,.25);
+  color: var(--red);
   font-size: .6875rem;
   font-weight: 700;
   letter-spacing: .08em;
@@ -344,13 +345,13 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.1;
   letter-spacing: -.04em;
   margin-bottom: 1.25rem;
-  color: #F8FAFC;
+  color: var(--dark);
 }
-.hero h1 .accent { color: #FF6B6B; }
+.hero h1 .accent { color: var(--red); }
 
 .hero-sub {
   font-size: 1rem;
-  color: rgba(255,255,255,.75);
+  color: var(--text-light);
   max-width: 520px;
   line-height: 1.75;
   margin-bottom: 2rem;
@@ -363,9 +364,9 @@ a { color: inherit; text-decoration: none; }
   gap: 1.5rem;
   flex-wrap: wrap;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid var(--border);
   font-size: .75rem;
-  color: rgba(255,255,255,.5);
+  color: var(--text-light);
 }
 
 /* ── Bande de stats ──────────────────────────────────────── */
@@ -646,8 +647,8 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1.2fr repeat(3, 1fr);
   gap: 2rem;
 }
-.footer-logo { display: flex; align-items: center; gap: .5rem; margin-bottom: 1rem; text-decoration: none; }
-.footer-logo span { font-size: 1.125rem; font-weight: 900; color: #fff; letter-spacing: -.02em; }
+.footer-logo { display: inline-flex; align-items: center; margin-bottom: 1rem; text-decoration: none; background: #fff; border-radius: 10px; padding: 8px 12px; }
+.footer-logo-img { height: 32px; width: auto; display: block; object-fit: contain; }
 .footer-brand p { font-size: .8125rem; line-height: 1.7; margin-bottom: 1rem; }
 .footer-linkedin {
   display: inline-flex;
@@ -722,37 +723,23 @@ a { color: inherit; text-decoration: none; }
 .fade-in-2 { animation-delay: .2s; }
 .fade-in-3 { animation-delay: .3s; }
 
-/* ── Lockup logo dans le hero ────────────────────────────── */
-.hero-lockup {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
+
+/* ── Logo dans le hero ───────────────────────────────────── */
+.hero-logo {
+  width: 120px;
+  height: auto;
+  display: block;
   margin-bottom: 1.5rem;
   animation: fadeIn .6s ease both;
 }
-.hero-lockup-mark {
-  background: #fff;
-  border-radius: 14px;
-  padding: 8px;
-  display: flex;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  flex-shrink: 0;
-}
-.hero-lockup-mark img { display: block; object-fit: contain; }
-.hero-lockup-name {
-  font-size: 1.625rem;
-  font-weight: 900;
-  color: #F8FAFC;
-  letter-spacing: -.03em;
-  line-height: 1;
-}
-.hero-lockup-tag {
-  font-size: .6875rem;
-  color: var(--text-light);
-  letter-spacing: .04em;
-  margin-top: 3px;
-}
+
+/* Boutons du hero clair */
+.hero .btn-white { background: var(--red); color: #fff; box-shadow: 0 4px 14px rgba(204,21,21,.25); }
+.hero .btn-white:hover { background: var(--red-dark); }
+.hero .btn-outline-white { background: transparent; border-color: var(--border); color: var(--text); }
+.hero .btn-outline-white:hover { background: var(--bg); border-color: var(--red); color: var(--red); }
+
 @media (max-width: 768px) {
-  .hero-lockup-mark img { width: 44px; height: 44px; }
-  .hero-lockup-name { font-size: 1.375rem; }
+  .hero-logo { width: 88px; margin-bottom: 1.25rem; }
+  .nav-logo-img { height: 32px; }
 }
