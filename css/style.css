@@ -145,7 +145,8 @@ a { color: inherit; text-decoration: none; }
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 64px;
+  height: 76px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,7 +160,8 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
 }
 .nav-logo-img {
-  height: 38px;
+  height: 46px;
+  max-height: 60%;
   width: auto;
   display: block;
   object-fit: contain;
@@ -688,7 +690,7 @@ a { color: inherit; text-decoration: none; }
   .topbar { display: none; }
   .nav-links, .nav-actions .btn-red { display: none; }
   .burger { display: flex; }
-  .nav-inner { height: 58px; }
+  .nav-inner { height: 62px; }
 
   .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
 
@@ -741,5 +743,5 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 768px) {
   .hero-logo { width: 88px; margin-bottom: 1.25rem; }
-  .nav-logo-img { height: 32px; }
+  .nav-logo-img { height: 36px; }
 }
